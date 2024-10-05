@@ -27,8 +27,8 @@ texto_reves = " ".join(lista_texto)
 print(f"Si invertimos el orden de las palabras de tu texto, el resultado es: \"{texto_reves}\"")
 
 #5
-
-encontrado = "python" in texto
+palabra = "Python"
+encontrado = palabra.lower() in texto
 
 resultado = {
     True: "La palabra \"python\" si forma parte de tu texto",
