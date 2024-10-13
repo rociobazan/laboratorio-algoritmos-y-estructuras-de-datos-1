@@ -12,11 +12,11 @@ Algoritmo sin_titulo
 		Mostrar Vector1[x]
 	Fin Para
 	
-	//Ordeno los elementos de forma descendente
+	//Ordeno los elementos de forma ascendente
 	
 	Para x<-1 Hasta 20 Con Paso 1 Hacer
 		Para i<-1 Hasta 19 Con Paso 1 Hacer
-			Si vector1[i] < vector1[i+1] Entonces
+			Si vector1[i] > vector1[i+1] Entonces
 				aux = vector1[i]
 				vector1[i] = vector1[i+1]
 				vector1[i+1] = aux
