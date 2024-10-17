@@ -59,6 +59,17 @@ def nombres_en_formato(formato, lista_nombres):
     else:
         return lista_nombres
 
+def eliminar_nombre(nombre, lista_nombres):
+    nombre_eliminar = nombre.lower()
+    lista_nombres_min = [nombre.lower() for nombre in lista_nombres]  
+    
+    if nombre_eliminar in lista_nombres_min:
+        lista_nombres_min.remove(nombre)
+        return f"El nombre '{nombre_eliminar}' ha sido eliminado de la lista. La lista actualizada es {', '.join(lista_nombres_min)}"
+    else:
+        return f"El nombre '{nombre_eliminar}' no se encontró en la lista."
+
+
 lista_nombres = []
 
 while True:
@@ -89,7 +100,8 @@ while True:
     print("8.Buscar si un nombre está en la lista")
     print("9.Contar cuántos nombres tienen más de 5 caracteres")
     print("10.Convertir los nombres a mayúsculas o minúsculas")
-    print("11.Salir")
+    print("11.Eliminar un nombre")
+    print("12.Salir")
 
     opcion = int(input("Ingrese el número correspondiente a la opción deseada"))
 
@@ -122,6 +134,9 @@ while True:
         formato_elegido = input("¿Quiere ver los nombres en mayúsucula o en minúscula?")
         print(', '.join(nombres_en_formato(formato_elegido, lista_nombres)))
     elif opcion == 11:
+        nombre_eliminar = input("¿Cuál nombre quiere eliminar?")
+        print(eliminar_nombre(nombre_eliminar, lista_nombres))
+    elif opcion == 12:
         print("Programa terminado")
         break
     else:
